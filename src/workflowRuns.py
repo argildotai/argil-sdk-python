@@ -5,7 +5,7 @@ from .types import WorkflowRun
 class WorkflowRuns:
     def __init__(self, apiKey: str) -> None:
         self.headers: Dict[str, str] = {'authorization': apiKey}
-        with open('config.json') as config_file:
+        with open('../config.json') as config_file:
             config = json.load(config_file)
         self.apiUrl: str = config['apiUrl']
 
