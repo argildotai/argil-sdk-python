@@ -1,0 +1,4 @@
+argil.egg-info
+build
+dist
+.env*
