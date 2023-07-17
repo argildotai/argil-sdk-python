@@ -3,10 +3,11 @@
 #     types: [created]
 name: Publish Python package to PyPI 📦
 
-on:
-  push:
-    tags:
-     - '*'
+on: [push]
+  # push:
+    # tags:
+     # - '*'
+       #- "v*"
 
 jobs:
   build-n-publish:

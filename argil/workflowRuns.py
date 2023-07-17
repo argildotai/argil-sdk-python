@@ -1,15 +1,14 @@
-import requests
-from typing import List, TypedDict
+import requests, json
+from typing import List
 from .types import WorkflowRun
+from pkg_resources import resource_string
 
 class WorkflowRuns:
     def __init__(self, apiKey: str) -> None:
         self.headers: Dict[str, str] = {'authorization': f'Bearer {apiKey}'}
-        with open('../config.json') as config_file:
-            config = json.load(config_file)
+        config = json.loads(resource_string(__name__, 'config.json').decode('utf-8'))
         self.apiUrl: str = config['apiUrl']
 
-        response = requests.post(f'{self.apiUrl}/runWorkflow', json={'id': id, 'input': input}, headers=self.headers)
     def list(self) -> List[WorkflowRun]:
         response = requests.get(f'{self.apiUrl}/getWorkflowRuns', headers=self.headers)
         response.raise_for_status()
