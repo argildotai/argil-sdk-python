@@ -9,6 +9,7 @@ class Workflows:
         config = json.loads(resource_string(__name__, 'config.json').decode('utf-8'))
         self.apiUrl: str = config['apiUrl']
 
+    # Run a workflow providing its id and input
     def run(self, id: str, input: Dict[str, Any]) -> WorkflowRun:
         response = requests.post(f'{self.apiUrl}/runWorkflow', json={'id': id, 'input': input}, headers=self.headers)
         response.raise_for_status()
