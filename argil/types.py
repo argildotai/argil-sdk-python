@@ -1,3 +1,5 @@
+from typing import TypedDict
+
 class WorkflowRun(TypedDict):
     id: str
     status: str

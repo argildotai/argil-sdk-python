@@ -1,12 +1,12 @@
-import requests
+import requests, json
 from typing import Dict, Any
 from .types import WorkflowRun
+from pkg_resources import resource_string
 
 class Workflows:
     def __init__(self, apiKey: str) -> None:
         self.headers: Dict[str, str] = {'authorization': f'Bearer {apiKey}'}
-        with open('../config.json') as config_file:
-            config = json.load(config_file)
+        config = json.loads(resource_string(__name__, 'config.json').decode('utf-8'))
         self.apiUrl: str = config['apiUrl']
 
     def run(self, id: str, input: Dict[str, Any]) -> WorkflowRun:
