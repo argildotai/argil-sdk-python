@@ -14,7 +14,7 @@ pip install argil
 
 Here's an example of how to use the SDK:
 
-```
+```python
 from argil import ArgilSdk
 
 argilSdk = ArgilSdk('ARGIL_API_KEY')
