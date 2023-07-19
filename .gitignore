@@ -2,3 +2,4 @@ argil.egg-info
 build
 dist
 .env*
+*__pycache__.py
