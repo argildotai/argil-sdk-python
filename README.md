@@ -30,7 +30,7 @@ from argil import ArgilSdk
 sdk = ArgilSdk(api_key='your-api-key')
 
 # Run a workflow
-run = sdk.workflows.run('workflow-id', 'your-input')
+run = sdk.workflows.run('workflow-id', INPUT_OBJECT) // The required input object depends on the workflow you run
 
 # Get a workflow run
 workflow_run = sdk.workflowRuns.get(run['id'])
