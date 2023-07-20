@@ -27,7 +27,7 @@ Here is a quick example of how to use the Argil Python SDK:
 ```python
 from argil import ArgilSdk
 
-sdk = ArgilSdk(api_key='your-api-key')
+sdk = ArgilSdk(api_key='your-api-key') // You can also provide your API key from ARGIL_API_KEY env variable
 
 # Run a workflow
 run = sdk.workflows.run('workflow-id', {
