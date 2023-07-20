@@ -1,15 +1,17 @@
+from typing import Optional
+
 class ArgilError(Exception):
     """
     Custom error class for Argil SDK.
     This provides more detailed and specific error messages.
     It can also include additional properties if needed.
     """
-    def __init__(self, message, status_code=None, details=None):
+    def __init__(self, message: str, status_code: Optional[int] = None, details: Optional[str] = None):
         super().__init__(message)
         self.status_code = status_code
         self.details = details
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Convert the error to a string.
         This will include the error name, the error message, and the status code (if applicable).
