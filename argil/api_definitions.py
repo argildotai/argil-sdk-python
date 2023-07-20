@@ -1,7 +1,6 @@
 from typing import Dict, List, Optional, Union
 from .argil_config import ArgilConfig
 from .argil_error import ArgilError
-from typing import Optional
 import requests
 
 class Base:
